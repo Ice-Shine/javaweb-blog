@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+
+    <style>
+        p{
+            text-align:center;
+            font-size: 50px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        注册成功，<span id="time">5</span>秒之后返回主页...
+    </p>
+    <br>
+    <h3>如果无法登陆，可能是用户名重复，请更换用户名后重新注册</h3>
+    <script>
+        var s=5;
+
+
+        function show() {
+            s--;
+            var time = document.getElementById("time");
+            time.innerHTML=s+"";
+            if(s==0){location.href="/blog/login.jsp";}
+
+        }
+        setInterval(show,1000);
+
+
+    </script>
+</body>
+</html>
